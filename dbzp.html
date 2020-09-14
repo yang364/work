@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<div>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>代表作品</title>
+    <style>
+	body
+	.lanren{
+		width:980px;
+		height: 500px;
+		overflow:hidden;
+		margin:0 auto;
+		position: relative;
+		top: 0px;
+		}
+	.flip-3d { 
+	  perspective: 1200px; width: 33%; float: left;  
+	}
+	.flip-3d figure { 
+	  position: relative; 
+	  transform-style: preserve-3d; 
+	  transition: 1s transform;
+	  font-size: 1.6rem;
+	  margin:25px;
+	}
+	.flip-3d figure img { 
+	  width: 100%; height: auto; 
+	}
+	.flip-3d figure figcaption { 
+	  position: absolute; 
+	  width: 100%; height:300px; top: 0; 
+	  transform: rotateY(.5turn) translateZ(1px); 
+	  background: rgba(255,255,255,0.9); 
+	  text-align: center; 
+	  padding-top: 35%; 
+	  opacity: 0.6; 
+	  transition: 1s .5s opacity; 
+	}
+	.flip-3d:hover figure { transform: rotateY(.5turn); }
+	.flip-3d:hover figure figcaption { opacity: 1; }
+	.flip-3d figure:after { 
+	  content: " "; display: block;
+	  height: 8vw; width: 100%; 
+	  transform: rotateX(90deg); 
+	  background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+	}
+	@media screen and (max-width: 800px) { 
+	  #flip-3d { perspective-origin: center top; }
+		div#flip-3d figure { 
+	    float: none; 
+	    width: 10%; 
+	    margin: 0 auto; 
+	    margin-bottom: 12vw; 
+	  }
+	 .flip-3d figure figcaption{font-size: 0.8rem;}
+		div#flip-3d figure:last-child { display: none; }
+	}
+
+	.wenzi {
+    font-family: 隶书;
+    font-size: 20px;
+	}
+	.wenzi2 {
+    font-family: 隶书;
+    font-size: 30px;
+	}
+	#d1 {
+	height: 600px;
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image:url(images/5.png);
+	position: relative;
+}
+	#d2{
+		height: 100px;
+		width:980px;
+		
+		}
+
+    #d3 {
+    font-family:隶书;
+    font-size: 70px;
+	width: 500px;
+	float: left;
+	height: 100px;
+	padding-top: 20px;
+}
+.back{
+	    height: 100px;
+		width: 380px;
+		float: right;
+		}
+.previous{
+	height: 50px;
+	float: left;
+	padding-top: 30px;
+		}
+.index{
+	height: 50px;
+	float: right;
+	padding-top: 30px;
+	padding-right: 180px;
+		}
+a{ color: #090707; text-decoration: none;}
+.fd { font-size: 30px; }
+.fd:hover {color: #3E3737; font-size: 40px; }
+.fd:visited{ color: #747474;}
+    </style>
+    
+  </head>
+  <body>
+    <div id="d1">
+      <div id="d2">
+		<div id="d3">代表作品</div>
+		<div class = "back">
+			<div class = "previous"><p class="wenzi2"><a href="study2.html" class="fd">上一页</a></p></div>
+			<div class = "index"><p class="wenzi2"><a href="index.html" class="fd">主页</a></p></div>
+		</div>
+        </div>
+      <div class="lanren">
+        <div class="flip-3d">
+          <figure>
+            <img src="images/jhj.png" >
+            <figcaption class="wenzi">《惊魂记》是环球宇宙公司出品的惊悚片，由阿尔弗雷德·希区柯克执导，安东尼·博金斯、珍妮特·利等主演。
+该片讲述了玛莉莲在浴室中被精神分裂的狂人杀死，之后玛莉莲的姐姐和男友加入警方的调查，在逐步侦查下终于揭露狂人杀人真相的故事。1960年6月16日，该片在美国上映。
+</figcaption>
+            </figure>
+          </div>
+        <div class="flip-3d">
+          <figure>
+            <img src="images/birdman.png">
+            <figcaption class="wenzi">《鸟人》（Birdman）是墨西哥导演亚利桑德罗·冈萨雷斯·伊纳里图执导的一部喜剧片，由迈克尔·基顿、艾玛·斯通、爱德华·诺顿主演，于2014年10月17日在美国上映。影片讲述一个过气的超级英雄演员，企图借百老汇咸鱼翻身的故事。
+该片获得第87届奥斯卡金像奖最佳影片、最佳导演、最佳原创剧本、最佳摄影等四项大奖。</figcaption>
+            </figure>
+          </div>
+        <div class="flip-3d">
+          <figure>
+            <img src="images/match point.png" >
+            <figcaption class="wenzi">《赛末点》是由导演伍迪·艾伦（Woody Allen）执导一部剧情片，斯嘉丽·约翰逊、艾米莉·莫迪默和乔纳森·莱斯·梅耶斯等联袂出演。影片率先于2005年5月12日在法国戛纳电影节放映。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+  </body>
+  </html>
+</div>
