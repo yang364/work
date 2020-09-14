@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>主要方面 扇形堆砌列表效果</title>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!--[if IE]>
+	<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- 代码部分begin -->
+<ul class="tabs">
+  <li class="tabs__item color1">
+	<h1><span>场景设计
+</span></h1>
+	<p class="tabs__stats">
+	 "场景布置"的一个重要元素是场景的布置和场景中的物体(道具)的设置。布景设计可用于放大人物情感或主导情绪，包括电影中的身体、社会、心理、情感、经济和文化意义。美术指导和导演做出的最重要的决定之一就是拍摄外景还是在片场拍摄。这两者的主要区别在于，在片场拍摄时，布景和道具必须被考虑到。然而，在片场拍摄因其成本效益而比外景拍摄更为普遍的被使用。
+	</p>
+  </li>
+  <li class="tabs__item color2">
+	<h1><span>电影摄影</span></h1>
+	</h2>
+	<p class="tabs__stats">
+灯光的强度、方向和质量会影响观众对人物、动作、主题和情绪的理解。 光(和阴)可以强调纹理、形状、距离、情绪、白天或夜晚的时间、季节、魅力;它会影响颜色在色调或深度上的呈现方式，并能使观众将注意力集中在构图的特定元素上。例如，高光可以唤起人们对形状和纹理的关注，而阴影往往隐藏着事物，创造出一种神秘或恐惧的感觉。 因此，必须事先对灯光进行彻底的规划，以确保其对观众的预期效果。因其协调摄像机和灯光而是这个过程的重要组成部分。
+	</p>
+  </li>
+  <li class="tabs__item color3">
+	<h1><span>视觉艺术</span></h1>
+	<p class="tabs__stats">
+	  在框架内的物体、角色和空间的组织。关于电影构图的一个最重要的概念是保持对称的平衡。这指的是在一个镜头中，光线、颜色、物体和/或图形的均匀分布。不平衡的构图可以用来强调电影的某些导演希望给予特别注意的元素。这个工具之所以有效，是因为观众更倾向于关注一些不平衡的东西，因为这些事物看起来很不同寻常。导演布置的角色位置也会因角色的重要性而有所不同。
+	</p>
+  </li>
+  <li class="tabs__item color4">
+	<h1><span>演员</span></h1>
+	<p class="tabs__stats">
+	 电影中表演风格的历史和文化差异如此之大。在早期，电影、舞台表演和电影作用是难以区分，在电影早期，舞台表演和电影表演是很难区分的，因为大多数电影演员以前都是舞台演员，因此不知道其他的表演方法。 最终，早期的情节剧风格，显然得益于19世纪的戏剧，在西方电影中被赋予了一种相对自然的风格。这种更为自然主义的表演风格在很大程度上受到了康斯坦丁·斯坦尼斯拉夫斯基(Konstantin Stanislavski)的关于的理论的影响，这一理论涉及演员完全沉浸在自己的角色中。。
+	</p>
+  </li>
+  <div class = "back">
+		<div class = "previous"><p class="p3"><a href="study2.html" class="fd">上一页</a></p></div>
+		<div class = "index"><p class="p3"><a href="index.html" class="fd">主页</a></p></div>
+	</div>
+  <div class="views-toggle views-toggle--hidden">
+	<svg fill="white" viewBox="0 0 24 24">
+	 <path d="M16.59 8.59l-4.59 4.58-4.59-4.58-1.41 1.41 6 6 6-6z"/>
+	<path d="M0 0h24v24h-24z" fill="none"/>
+  </svg>
+  </div>
+</ul>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+var Tabs = function () {
+	var toggler = $('.views-toggle');
+	var tabs = $('li.tabs__item');
+	var toggled = false;
+	var transform = function (el, value) {
+		el.css('transform', value);
+		el.css('-webkit-transform', value);
+		el.css('-ms-transform', value);
+	};
+	var transition = function (el, value) {
+		el.css('transition', value);
+		el.css('-webkit-transition', value);
+		el.css('-ms-transition', value);
+	};
+	var moveContent = function () {
+		if (!toggled) {
+			toggled = true;
+		} else {
+			toggled = false;
+		}
+		moveTabs(toggled);
+		return false;
+	};
+	var moveTabs = function (a) {
+		var transY, scale;
+		if (a) {
+			tabs.css({
+				'opacity': '1',
+				'box-shadow': '0 30px 60px rgba(0,0,0,0.4)',
+				'cursor': 'pointer'
+			});
+			tabs.each(function (index) {
+				transY = index * 10;
+				scale = 0.5 + index / 25;
+				transform($(this), 'translate3d(0,' + transY + 'vh, 0) scale(' + scale + ')');
+			});
+			toggler.addClass('views-toggle--hidden');
+		} else {
+			transform(tabs, 'translate3d(0,0,0) scale(1)');
+		}
+	};
+	var switchTabs = function () {
+		var selected = $(this);
+		var others = selected.siblings('li');
+		if (toggled) {
+			transition(others, 'transform 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06)');
+			transform(others, 'translate3d(0, 100%, 0) scale(1)');
+			transform(selected, 'translate3d(0,0,0) scale(1)');
+			tabs.css({
+				'box-shadow': '0 30px 60px rgba(0,0,0,0.4)',
+				'cursor': 'default'
+			});
+			toggled = false;
+			selected.on('transitionend webkitTransitionend', function () {
+				toggler.removeClass('views-toggle--hidden');
+				others.css({ 'opacity': '0' });
+				transform(others, 'translate3d(0, 100%, 0) scale(0)');
+				transition(others, 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1)');
+				selected.off('transitionend webkitTransitionend');
+			});
+		}
+	};
+	var setup = function () {
+		toggled = true;
+		moveTabs(toggled);
+	};
+	var init = function () {
+		$(document).on('ready', setup);
+		toggler.on('click touchstart', moveContent);
+		tabs.on('click touchstart', switchTabs);
+	};
+	return { init: init };
+}();
+Tabs.init();
+</script>
+<!-- 代码部分end -->
+</body>
+</html>
